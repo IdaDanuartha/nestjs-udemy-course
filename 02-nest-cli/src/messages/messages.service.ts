@@ -1,21 +1,21 @@
 import { MessagesRepository } from './messages.repository';
 
 export class MessagesService {
-    messagesRepo: MessagesRepository
+  messagesRepo: MessagesRepository;
 
-    constructor() {
-        this.messagesRepo = new MessagesRepository()
-    }
+  constructor() {
+    this.messagesRepo = new MessagesRepository();
+  }
 
-    findOne(id: string) {
-        return this.messagesRepo.findOne(id)
-    }
+  findOne(id: string) {
+    return this.messagesRepo.findOne(id);
+  }
 
-    findAll() {
-        return this.messagesRepo.findAll()
-    }
+  findAll() {
+    return this.messagesRepo.findAll();
+  }
 
-    create(content: string) {
-        return this.messagesRepo.store(content)
-    }
+  create(content: string) {
+    return this.messagesRepo.create(content);
+  }
 }

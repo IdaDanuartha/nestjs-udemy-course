@@ -13,7 +13,7 @@ class MessagesService {
         return this.messagesRepo.findAll();
     }
     create(content) {
-        return this.messagesRepo.store(content);
+        return this.messagesRepo.create(content);
     }
 }
 exports.MessagesService = MessagesService;

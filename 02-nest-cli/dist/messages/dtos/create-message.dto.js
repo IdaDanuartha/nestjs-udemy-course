@@ -17,5 +17,5 @@ exports.CreateMessageDto = CreateMessageDto;
 __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
-], CreateMessageDto.prototype, "email", void 0);
+], CreateMessageDto.prototype, "content", void 0);
 //# sourceMappingURL=create-message.dto.js.map

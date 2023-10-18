@@ -5,7 +5,7 @@ export class MessagesRepository {
     const contents = await readFile('messages.json', 'utf8');
     const messages = JSON.parse(contents);
 
-    return messages[id];
+    return messages.filter((msg: any) => msg.id == id);
   }
 
   async findAll() {
@@ -15,14 +15,14 @@ export class MessagesRepository {
     return messages;
   }
 
-  async store(content: string) {
+  async create(content: string) {
     const contents = await readFile('messages.json', 'utf8');
     const messages = JSON.parse(contents);
 
-		const id = Math.floor(Math.random() * 999)
+    const id = Math.floor(Math.random() * 999);
 
-		messages[id] = { id, content }
+    messages.push({ id, content });
 
-		await writeFile('messages.json', JSON.stringify(messages))
+    await writeFile('messages.json', JSON.stringify(messages));
   }
 }
